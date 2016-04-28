@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>远距离链接</title>
+</head>
+<style>
+body{
+	width:1200px;
+	height:1000px
+}
+.remote{
+	position:relative;
+	width:1024px;
+	height:683px;
+	/*若是要将文字和框分开来，一定要在外面加div标签，并加一个总的类remote，对remot实行relative定位，才能实现对link类的正确定位。*/
+}
+ul{	
+	padding:0px;
+	margin:0px;
+	list-style-type:none;
+}
+ul li a .hotspot{
+	background:url(a.png) no-repeat left center;
+	/*加上此行透明背景代码用来使ie11以下版本能正常显示热点
+	ie不显示不在屏幕内的链接
+	加透明背景或者可以指向不存在的图片urltext-indent:-10000px*/
+	position:absolute;
+	display:block;
+	width:80px;
+	height:90px;
+	text-decoration:none;
+	color:#000;
+	cursor:pointer;
+}
+.rich a .hotspot{
+	top:241px;
+	left:70px;	/*详细到第一个span中的hotspot类*/
+}
+.sophie a .hotspot{
+	top:322px;
+	left:275px;	
+}
+.cath a .hotspot{
+	top:226px;
+	left:415px;	
+}
+.james a .hotspot{
+	top:356px;
+	left:565px;	
+}
+.richard a .hotspot{
+	top:307px;
+	left:720px;	
+}
+.paul a .hotspot{
+	top:253px;
+	left:870px;	
+}
+ul li a .link{
+	position: absolute;
+	display: block;
+	text-decoration: none;
+	left: 1033px;
+	width:300px;
+}
+.rich a .link{
+	top:0px;/*写法，。rich就代表类了*/
+}
+.sophie a .link{
+	top:20px;
+}
+ .cath a .link{
+	top:40px;
+}
+.james a.link{
+	top:60px
+	
+}
+ .richard a .link{
+	top:65px
+}
+ .paul a .link{
+	top:80px
+}
+
+
+ul li a:hover .hotspot,
+ul li a:focus .hotspot{
+		border:#FFF solid 1px;/*除非再加一个span，否则无法实现框颜色变幻
+			因为link与hotspot是同一个链接，所以能实现放到文字上框就显现出来*/
+}
+ul li a:hover .link,
+ul li a:focus .link{
+	color: #FF6
+}
+
+</style>
+
+<body>
+<div class="remote">
+<img src="4.jpg" alt="picture" />
+<ul>
+<li class="rich">
+<a href="www.hao123.com">
+<span class="hotspot"></span><!--实现分开定位，两个span必须是分开的-->
+<span class="link">
+Richard buffer
+</span>
+</a>
+</li>
+<li class="sophie">
+<a href="#">
+<span class="hotspot"></span>
+<span class="link">
+sophie barrett</span>
+</a>
+</li>
+<li class="cath">
+<a href="#">
+<span class="hotspot"></span>
+<span class="link">
+cathy jones
+</span>
+</a>
+</li>
+<li class="james">
+<a href="#">
+<span class="hotspot"></span>
+<span class="link">
+james box
+</span>
+</a>
+</li>
+<li class="richard">
+<a href="#">
+<span class="hotspot"></span>
+<span class="link">
+Richard buffer
+</span>
+</a>
+</li>
+<li class="paul">
+<a href="#">
+<span class="hotspot"></span>
+<span class="link">
+paul annett
+</span>
+</a>
+</li>
+</ul>
+</div>
+</body>
+</html>
